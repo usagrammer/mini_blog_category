@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<p>
+  <strong>Parent Category:</strong>
+  <%= @article.category&.root&.name %>
+</p>
+
+<p>
+  <strong>Child Category:</strong>
+  <%= @article.category&.parent&.name %>
+</p>
+
+<p>
+  <strong>Grandchild Category:</strong>
+  <%= @article.category&.name %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
