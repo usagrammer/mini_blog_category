@@ -31,7 +31,6 @@ window.addEventListener('load', function () {
         return null;
       }
 
-      console.log(changedForm.nextElementSibling)
       if (changedForm.nextElementSibling) changedForm.nextElementSibling.remove(); // 変化したフォームより後ろのフォームを削除する
 
       if (!XHR.response.html) return null // コントローラから返ってきたhtmlの中身が無い場合、ここで終了
@@ -43,7 +42,7 @@ window.addEventListener('load', function () {
     }
   }
 
-  categoryForms.forEach(categoryForm => {
+  categoryForms.forEach(categoryForm => { // カテゴリのフォームにイベントを設定する
     categoryForm.addEventListener('change', categoryChanged);
   });
 
